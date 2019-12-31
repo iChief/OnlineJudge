@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
-public class EuclidProblem {
+class EuclidProblem {
+
     public static void main(String args[]){
             Scanner in = new Scanner(System.in);
             while (in.hasNextInt()) {

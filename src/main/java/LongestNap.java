@@ -63,6 +63,7 @@ class Main {
             sb.append("Day #");
             sb.append(dayCount);
             sb.append(": the longest nap starts at ");
+            assert(lastMaxEnd!=null);
             sb.append(lastMaxEnd.endS);
             sb.append(" and will last for ");
             if (maxDuration>=60) {
