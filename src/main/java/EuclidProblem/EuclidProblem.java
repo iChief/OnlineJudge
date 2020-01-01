@@ -1,10 +1,12 @@
+package EuclidProblem;
+
 import java.util.Scanner;
 
-class EuclidProblem {
+class Main {
 
-    public static void main(String args[]){
+    public static void main(String args[]) {
             Scanner in = new Scanner(System.in);
-            while (in.hasNextInt()) {
+            while (in.hasNext()) {
                 int a = in.nextInt();
                 int b = in.nextInt();
 
