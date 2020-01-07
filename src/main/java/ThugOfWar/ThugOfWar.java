@@ -1,9 +1,17 @@
 package ThugOfWar;
 
 import java.util.*;
+
+/**
+ * Thug Of War (10032)
+ * https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=973
+ *
+ * @author Ahmed Schahadeh (UVa: iChief)
+ */
+
 class Main
 {
-    public static void main(String arg[])
+    public static void main(String[] args)
     {
         Scanner sc = new Scanner (System.in);
         int numCases = sc.nextInt();

@@ -4,6 +4,13 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
+/**
+ * Longest Nap (10191)
+ * https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1132
+ *
+ * @author Ahmed Schahadeh (UVa: iChief)
+ */
+
 class Main {
 
     static class Time implements Comparable<Time> {

@@ -2,6 +2,13 @@ package EuclidProblem;
 
 import java.util.Scanner;
 
+/**
+ * Euclid Problem (10104)
+ * https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=13&page=show_problem&problem=1045
+ *
+ * @author Ahmed Schahadeh (UVa: iChief)
+ */
+
 class Main {
 
     public static void main(String[] args) {
