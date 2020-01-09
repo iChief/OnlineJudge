@@ -10,6 +10,10 @@ import java.util.Scanner;
  */
 
 class Main {
+    /**
+     * Gesucht ist der grösste gemeinsame Teiler a.
+     * Wobei a*x1 + b*y1 zusammen den ggT ergeben müssen.
+     */
 
     public static void main(String[] args) {
             Scanner in = new Scanner(System.in);

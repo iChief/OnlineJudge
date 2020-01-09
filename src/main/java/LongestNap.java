@@ -12,22 +12,20 @@ import java.util.StringTokenizer;
  */
 
 class Main {
+    /**
+     *  Das Ziel ist es den längsten Zeitabstand zwischen jeweils zwei Lektionnen aus dem Input aller gegebenen
+     *  Lektionenen heraus zu finden. Der Start wird auf 10:00 (600 min) gesetzt und mit dem Stringtokenizer sollen die
+     *  einzelnen Inputslines in Start und End ausgelesen werden. Der Subtraktion kann man dann die längste
+     *  Zeitspanne für das längste Nap berechnen. Zum Schluss muss man noch die Länge der Naps anschauen um so zu
+     *  differenzieren zwischen der Ausgabe von nur Minuten oder Stunden und Minuten (MaxDuration>=60)
+     */
 
-    static class Time implements Comparable<Time> {
-        String startS;
-        String endS;
-        int startMin;
-        int endMin;
-
-        @Override
-        public int compareTo(Time t) {
-            return this.startMin-t.startMin;
-        }
-    }
     public static void main(String[] args) throws IOException {
+        //Input auslesen
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
         String s;
         int dayCount=1;
+        //Input nehmen Comparable mit default füllen und die längsten Abstände ausrechnen.
         while ((s=br.readLine())!=null) {
             int timeCount=Integer.parseInt(s);
             Time [] time=new Time[timeCount+2];
@@ -66,6 +64,7 @@ class Main {
                 }
             }
 
+            // Resultate aneinander hängen und nach kriterium >=60 überprüfen und dementsprechend printen
             StringBuilder sb=new StringBuilder();
             sb.append("Day #");
             sb.append(dayCount);
@@ -81,6 +80,23 @@ class Main {
             sb.append(" minutes.");
             System.out.println(sb.toString());
             dayCount++;
+        }
+    }
+
+    /*
+    Ich bin seit einer Ehwigkeit dran heraus zu finden warum der letzte String nicht ausgeprintet wird auf der Konsole
+    aber ich finde es einfach nicht heraus...Bei drücken von Enter wird er dann angezeigt...Hoffe es klappt trotzdem^^
+     */
+
+    static class Time implements Comparable<Time> {
+        String startS;
+        String endS;
+        int startMin;
+        int endMin;
+
+        @Override
+        public int compareTo(Time t) {
+            return this.startMin-t.startMin;
         }
     }
 }
