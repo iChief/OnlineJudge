@@ -15,8 +15,12 @@ class Main {
      * der einzelnen Teammitglieder soll so gut wie möglich ausgeglichen sein.
      * Es wird zunächst die gesammte Anzahl von Personen ausgeslsen und dannach die einzelnen Gewichte der reihe nach
      * abgespeichert. Da das Gewicht der Personen so ausgeglichen wie möglich sein soll wird dann das Gewicht berechnet.
-     * Dafür benötigt man die Anzahl Personen und alle dazugehörigen Gewichte. Da musste ich ganz viel StackOverflow
-     * und einen Kumpel zu rate ziehen weil ichs einfach nicht gebacken gekriegt habe!!
+     * Dafür benötigt man die Anzahl Personen und alle dazugehörigen Gewichte. Am Schluss geht man rückwärts
+     * durch das Array mit möglichen Gewichten, schaut ob es true ist und addiert dann das Gewicht der weiteren Person.
+     * Danach schaut man wo ist es mit der Hälfte aller Personen überhaupt möglich das Gewicht zu erreichen.
+     * Bei ungerader Anzahl Personen wird dann halt mit +1 auf dem Einen Team gerechnet.
+     * Da musste ich ganz viel StackOverflow und einen Kumpel zu rate ziehen weil ichs einfach nicht gebacken
+     * gekriegt habe!!
      */
     public static void main(String[] args)
     {
@@ -48,18 +52,20 @@ class Main {
             for(int j=possibleWeight.length-1;j>=0;j--){
                 if(possibleWeight[j]){
                     possibleWeight[j+weights[i]]=true;
-                    people[j+weights[i]]|=(people[j]<<1);
+                    people[j+weights[i]] |= (people[j]<<1);
                 }
             }
         }
 
-        for(int i=sum/2;i>=0;i--){
-            if(possibleWeight[i]){
-                if(numberOfPeople%2==0 && ((people[i]&((long)1<<(numberOfPeople/2)))!=0)){
-                    System.out.println(""+i+" "+(sum-i)); return;
-                }else if(numberOfPeople%2==1 && (((people[i]&((long)1<<(numberOfPeople/2)))!=0)||
-                        ((people[i]&((long)1<<(numberOfPeople/2+1)))!=0))){
-                    System.out.println(""+i+" "+(sum-i)); return;
+        for (int i = sum / 2; i >= 0; i--) {
+            if (possibleWeight[i]) {
+                if (numberOfPeople % 2 == 0 && ((people[i] & ((long) 1 << (numberOfPeople / 2))) != 0)) {
+                    System.out.println("" + i + " " + (sum - i));
+                    return;
+                } else if (numberOfPeople % 2 == 1 && (((people[i] & ((long) 1 << (numberOfPeople / 2))) != 0) ||
+                        ((people[i] & ((long) 1 << (numberOfPeople / 2 + 1))) != 0))) {
+                    System.out.println("" + i + " " + (sum - i));
+                    return;
                 }
             }
         }
