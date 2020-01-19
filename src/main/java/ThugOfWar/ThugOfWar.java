@@ -7,6 +7,7 @@ import java.util.*;
  * https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=973
  *
  * @author Ahmed Schahadeh (UVa: iChief)
+ * (Hilfestellung Paul Sonnenschein)
  */
 
 class Main {
